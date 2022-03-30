@@ -10,25 +10,6 @@
     <button class="favorite-icon" @click="saveFavorite(index)">
       {{ list.buttonText }}
     </button>
-    <!-- <img
-      class="lodge_photo"
-      src="https://cf.bstatic.com/xdata/images/hotel/max1280x900/59942243.jpg?k=ac10fdc774aec53081adddf06da704beb8c95a3a1702212014dd872f2e0ab9c2&o="
-    />
-    <p class="lodge_name">{{ list.name }}</p>
-    <img
-      src="../assets/icons8-スター.png"
-      alt="お気に入り"
-      class="favorite-icon"
-      @click="saveFavorite"
-      v-if="isFavorited"
-    />
-    <img
-      src="../assets/icons8-スター塗りつぶし.png"
-      alt="お気に入り"
-      class="favorite-icon"
-      @click="deleteFavorite"
-      v-else
-    /> -->
   </div>
 </template>
 
@@ -68,21 +49,6 @@ export default {
         }
       })
     },
-    // deleteFavorite() {
-    //   onAuthStateChanged(auth, (user) => {
-    //     //メール認証をしているかどうか
-    //     if (user) {
-    //       const uid = user.uid
-    //       const favid = doc(db, "users", uid, "favorite")
-    //       //   where("lodgeId", "==", this.doc().id)
-    //       deleteDoc(favid)
-    //       console.log("お気に入りを取り消しました。")
-    //       this.isFavorited = true
-    //     } else {
-    //       console.log("お気に入りを取り消し出来ません。")
-    //     }
-    //   })
-    // },
   },
 }
 </script>

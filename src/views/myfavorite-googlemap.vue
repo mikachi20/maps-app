@@ -85,48 +85,6 @@ export default {
         }
       })
     },
-
-    //情報を表示する部分
-    /*info: function (latLng, marker, map) {
-      const contents =
-        "<div id = content>" +
-        '<div class = "memo-container">' +
-        '<div class = "memo-field">{{memo}}</div>' +
-        '<p>楽天トラベルURL<a href = "https://travel.rakuten.co.jp/?s_kwcid=paidsearch&gclid=CjwKCAjwrfCRBhAXEiwAnkmKmf-bOBlbyC5N_FuW07gZvGoiT2nJJ241bMgJR3n4zGEC_zdtPswhcRoCo0kQAvD_BwE&gclsrc=aw.ds"</a>' +
-        "last visited:2022/2/2</p>" +
-        "</div>" +
-        "</div>"
-
-      const infomation = new window.google.maps.InfoWindow({
-        content: contents,
-      })
-
-      infomation.open({
-        anchor: marker,
-        map: map,
-        shouldFocus: false,
-      })
-    },*/
-    //},
-
-    //deleteButton: function (latLng, marker) {
-    // marker.setMap(null)
-    /*const map = new window.google.maps.Map(this.$refs.map, {
-      center: this.latLngs[0],
-      zoom: 11,
-      mapType: "default",
-    })
-    if (this.latLngs.length < 1) {
-      return
-    } else {
-      this.latLngs.pop()
-      for (let i = 0; i < this.latLngs.length; i++) {
-        new window.google.maps.Marker({
-          position: this.latLngs[i],
-          map: map,
-        })
-      }
-    }*/
   },
   created() {
     onAuthStateChanged(auth, (user) => {
@@ -165,10 +123,6 @@ export default {
     let timeCount = setInterval(() => {
       if (window.mapCompleted === true) {
         clearInterval(timeCount)
-        // this.latLngs.push({
-        //   lat: this.favList.hotelLating,
-        //   lng: this.favList.hotelLng,
-        // })
         const map = new window.google.maps.Map(this.$refs.map, {
           center: this.latLngs[0],
           zoom: 12,
@@ -187,7 +141,6 @@ export default {
           })
           marker.setMap(map)
           marker.addListener("click", () => {
-            //this.deleteButton(p.latLng, marker)
             marker.setMap(null)
             const firstlatLng = this.latLngs[i]
             if (this.latLngs.includes(firstlatLng)) {
@@ -203,7 +156,6 @@ export default {
 
 <style>
 #map {
-  /* 高さ600px、幅max */
   height: 600px;
   width: 100%;
 }
